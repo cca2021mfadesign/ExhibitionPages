@@ -1,3 +1,4 @@
+let pos;
 !(function (t) {
     var e = {};
     function i(n) {
@@ -59,6 +60,8 @@
         var o,
             r = document.getElementById("tp__canvas"),
             a = r.getContext("2d");
+
+
         (r.width = window.innerWidth), (r.height = window.innerHeight);
         var l = {},
             h = {},
@@ -118,30 +121,38 @@
                 o.push(new s(n, l, h, c, t.textList[i], t.particleColor, t.particleSize, t.textColor, t.textSize));
             }
         }
-        function p() {
+
+
+        function p(event) {
             a.clearRect(0, 0, r.width, r.height);
+
             for (var t = o.length, e = 0; e < t; e++) o[e].update();
             !(function () {
                 for (var t, e = r.width * r.height, i = 0; i < o.length; i++)
                     for (var n = i; n < o.length; n++) {
                         var l = (o[i].pointX - o[n].pointX) * (o[i].pointX - o[n].pointX) + (o[i].pointY - o[n].pointY) * (o[i].pointY - o[n].pointY);
-                        l < e && ((t = 1 - l / 4e4), (a.strokeStyle = "rgba(255,255,255, ".concat(t, ")")), (a.lineWidth = 1), a.beginPath(), a.moveTo(o[i].pointX, o[i].pointY), a.lineTo(o[n].pointX, o[n].pointY), a.stroke());
+                        l < e && ((t = 1 - l / 4e4), (a.strokeStyle = "rgba(0,255,255, ".concat(t, ")")), (a.lineWidth = 1), a.beginPath(), a.moveTo(o[i].pointX, o[i].pointY), a.lineTo(o[n].pointX, o[n].pointY), a.stroke());
                     }
             })(),
                 window.requestAnimationFrame(p);
         }
+
+
         window.addEventListener("resize", function () {
             (r.width = window.innerWidth), (r.height = window.innerHeight), c(h);
         }),
             (l.accelerate = function (t) {
-                ((h = t).maxSpeed = t.speed || 2),
-                    (h.minSpeed = -t.speed || -2),
-                    (h.particleColor = t.particleColor || "orange"),
+            
+
+                ((h = t).maxSpeed = t.speed || 1),
+                    (h.minSpeed = -t.speed || -1),
+                    (h.particleColor = t.particleColor || "transparent"),
                     (h.particleSize = t.particleSize || 0),
                     (h.textColor = t.textColor || "#dddddd"),
                     (h.textList = (
                         t.textList ||
-                        "Warty Warthog, Hoary Hedgehog, Breezy Badger, Dapper Drake, Edgy Eft, Feisty Fawn, Gutsy Gibbon, Hardy Heron, Intrepid Ibex, Jaunty Jackalope, Karmic Koala, Lucid Lynx, Maverick Meerkat, Natty Narwhal, Oneiric Ocelot, Precise Pangolin, Quantal Quetzal, Raring Ringtail, Saucy Salamander, Trusty Tahr, Utopic Unicorn, Vivid Vervet, Wily Werewolf, Xenial Xerus, Yakkety Yak, Zesty Zapus, Artful Aardvark, Bionic Beaver, Cosmic Cuttlefish, Disco Dingo, Eoan Ermine, Focal Fossa"
+                         "Keyu Mao, Sarah Bonnickson, Abigayle Cosinuke, Tingyu Zhao, Kaiwen Liu, Fuming Zhou, Yashan Deng, Qianshi Zheng, Jason Malik, Mengwen Yu, Eryn Bathke, Tiaoli Li, Haojie Chai, Xiaohan Hannah Liao, Hancai Wang, Wen Liu, Ashlyn Jackson, Chloe Looker, Troy Taylor, Tin Dinh, Shang-Te Chen, Meg Quarton, Dom Granato, Danielle Kim, Rebecca Gardea"
+                    
                     ).split(", ")),
                     (h.textSize = t.textSize || 24),
                     c(h),
@@ -149,4 +160,5 @@
             }),
             l.accelerate({ textSize: 20, particleSize: 2 });
     },
+
 ]);
