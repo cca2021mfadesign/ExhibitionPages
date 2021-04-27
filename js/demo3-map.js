@@ -1,4 +1,4 @@
-mapboxgl.accessToken = 'pk.eyJ1IjoiZHVzdHN0YXIwMjEzIiwiYSI6ImNrbnhpcDBreTBtajcyb3FkdTY1cnd1Z2QifQ.pUKdIHe_quvCGrAsPnh65g'; // need to change
+mapboxgl.accessToken = 'pk.eyJ1IjoiZHVzdHN0YXIwMjEzIiwiYSI6ImNrbzBmZWN0eDBjeG0ydnJ0NHZrMjV6eTgifQ.uqIXMUPtfUk0PyyH7WlpCA'; // need to change
 var hannahlocation = [37.7690643, -122.4033639]; // my current location
 var map = new mapboxgl.Map({
   container: 'map', // container id
