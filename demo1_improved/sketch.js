@@ -92,8 +92,8 @@ function setup() {
   print(data.getColumn('colors')[0]);
 
   //console.log(names.length);
-  let pdiv = document.getElementById('page_middle');
-  cnv.parent(pdiv);
+ // let pdiv = document.getElementById('page_middle');
+  //cnv.parent(pdiv);
 }
 
 function draw() {
