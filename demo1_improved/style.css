@@ -1,0 +1,30 @@
+html, body {
+  margin: 0;
+  padding: 0;
+}
+canvas {
+  display: block;
+  
+}
+#page_middle{
+  width: 100%;
+    display: flex;
+    flex-grow: 1;
+}
+
+@font-face {
+  font-family: myTinyFont;
+  src: url(TINY5x3-140.otf);
+}
+
+a {
+  font-family: myTinyFont;
+  fony-size: 40 px;
+}
+.circles{
+    height: 10px;
+  width: 10px;
+  border-radius: 50%;
+  display: inline-block;
+  
+}
