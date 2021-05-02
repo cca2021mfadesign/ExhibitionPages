@@ -66,9 +66,9 @@ p {
 }
 
 #holder > *:nth-child(3){
-  grid-column-start: 12;  
-  grid-row-start: 8;  
-  grid-row-end: span 4;  
+    grid-column-start: 13;
+    grid-row-start: 10;
+    grid-row-end: span 6;
 }
 
 #holder > *:nth-child(4){
@@ -313,6 +313,8 @@ p {
   grid-column-start: 11;  
   grid-row-start: 5;  
   grid-row-end: span 10;
+  transform: rotatez(-60deg) skewY(30deg);
+  font-size: 15px;
 }
 
 #holder > *:nth-child(42){
@@ -333,6 +335,7 @@ p {
   grid-row-start: 37;  
   grid-row-end: span 10;
   margin-left: -10vw;
+
 }
 
 #holder > *:nth-child(45){
