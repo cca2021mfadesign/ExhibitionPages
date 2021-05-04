@@ -41,6 +41,13 @@ p {
   transform: skewY(30deg);
   z-index: 10;
 }
+.dir2 {
+  border-bottom: #13ebe3 1px solid;
+  color: #13ebe3;
+  text-align: right;
+  transform: skewY(-30deg);
+  z-index: 10;
+}
 .holden {
   border-top: #de7eb5 1px solid;
   color: #de7eb5;
@@ -88,10 +95,11 @@ p {
 }
 
 #holder > *:nth-child(6){
-  grid-column-start: 17;  
-  grid-row-start: 23;  
-  grid-column-end: span 2;  
-}
+grid-column-start: 8;
+    grid-row-start: 14;
+    grid-column-end: span 8;
+    grid-row-end: 30;
+  }
 
 #holder > *:nth-child(7){
   grid-column-start: 5;  
