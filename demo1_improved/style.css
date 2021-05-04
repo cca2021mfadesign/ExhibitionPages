@@ -30,3 +30,24 @@ a {
 }
 
 
+.centerButton{
+  height: 50px;
+  width: 50px;
+  position: absolute;
+  top:1vh;
+   right:1vw;
+   border-radius: 50%;
+/*    top: 70%;
+    left: 50%;
+    margin-top: -50px;
+    margin-left: -50px;
+    border-radius: 50%;*/
+   
+/*  display: inline-block;
+  background-image: url("images/waww.png");*/
+}
+.centerButton:hover{
+  box-shadow: 12px 12px 2px 1px rgba(100, 100, 100, .5);
+ border: 2px solid black;
+
+}
