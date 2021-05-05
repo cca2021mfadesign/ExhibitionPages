@@ -56,7 +56,7 @@ class Particle {
     particles.forEach(element => {
       let dis = dist(this.x, this.y, element.x, element.y);
       if (dis < 200) {
-        stroke('rgba(0,0,0,0.5)');
+        stroke('rgba(255,255,255,0.5)');
         strokeWeight(1);
         line(this.x, this.y, element.x, element.y);
       }
@@ -84,7 +84,7 @@ function setup() {
     particles.push(new Particle());
       namea = createElement('a');
     circles=createElement('div');
-        namea.style('color', '#000');
+        namea.style('color', '#fff');
     namea.style('font-size', '35px');
     namesdiv.push(namea);
     circlesDiv.push(circles);
