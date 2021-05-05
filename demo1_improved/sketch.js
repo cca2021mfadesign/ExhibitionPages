@@ -85,7 +85,7 @@ function setup() {
       namea = createElement('a');
     circles=createElement('div');
         namea.style('color', '#000');
-    namea.style('font-size', '30px');
+    namea.style('font-size', '35px');
     namesdiv.push(namea);
     circlesDiv.push(circles);
    
