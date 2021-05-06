@@ -21,8 +21,8 @@ class Particle {
     this.x = random(230, width - 130);
     this.y = random(230, height - 130);
     this.r = 15;
-    this.xSpeed = random(-0.5, 0.5);
-    this.ySpeed = random(-0.5, 0.5);
+    this.xSpeed = random(-1.5, 1.5);
+    this.ySpeed = random(-1.5, 1.5);
   }
 
   // creation of a particle.
@@ -81,7 +81,7 @@ function setup() {
   cnv = createCanvas(bkcontainer.offsetWidth, windowHeight/2);
   cnv.parent(bkcontainer);
  // cnv.style("z-index: 10");
-  cnv.position(0,0);
+  cnv.position(0,0,);
   for (let i = 0; i < data.getRowCount(); i++) {
     particles.push(new Particle());
 
@@ -147,8 +147,8 @@ function draw() {
 
     document.getElementById(str(data.getColumn('names')[i])).onmouseout = function() {
     document.getElementById(str(data.getColumn('names')[i])).style.color = '#fff';
-       particles[i].xSpeed += random(-0.5,0.5);
-       particles[i].ySpeed +=random(-0.5,0.5);
+       particles[i].xSpeed += random(-1.5,1.5);
+       particles[i].ySpeed +=random(-1.5,1.5);
     particles[i].moveParticle(particles[i]);
     particles[i].joinParticles(particles.slice(i));
     };
