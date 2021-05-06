@@ -14,13 +14,13 @@ canvas {
 
 a {
   font-family: myTinyFont;
-  font-size: 40 px;
+  font-size: 40px;
 }
+
 .circles{
-    height: 15px;
+  height: 15px;
   width: 15px;
   border-radius: 50%;
   display: inline-block;
   
 }
-
