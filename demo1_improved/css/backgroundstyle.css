@@ -93,7 +93,7 @@
 }
 
 /* Shadow style */
-.ri-shadow:after,
+/*.ri-shadow:after,
 .ri-shadow:before{
 	content: "";
 	position: absolute;
@@ -120,7 +120,7 @@
 	-o-transform: rotate(3deg);
 	transform: rotate(3deg);
 }
-
+*/
 .ri-grid-loading:after,
 .ri-grid-loading:before{
 	display: none;

@@ -28,7 +28,7 @@ a {
 
 a img {
 	border: none;
-	filter: grayscale(80%);
+	
 }
 
 .container {
@@ -37,7 +37,7 @@ a img {
 	position: relative;
 	background: transparent url(../images/light.png) fixed no-repeat center top;
 	z-index: -1;
-	filter: grayscale(100%);
+	filter: brightness(30%);
 }
 
 .codrops-header{
