@@ -18,8 +18,8 @@ class Particle {
   // setting the co-ordinates, radius and the
   // speed of a particle in both the co-ordinates axes.
   constructor() {
-    this.x = random(30, width - 30);
-    this.y = random(30, height - 30);
+    this.x = random(230, width - 130);
+    this.y = random(230, height - 130);
     this.r = 15;
     this.xSpeed = random(-0.5, 0.5);
     this.ySpeed = random(-0.5, 0.5);
@@ -37,9 +37,9 @@ class Particle {
 
   // setting the particle in motion.
   moveParticle() {
-    if (this.x < width / 10 || this.x > width)
+    if (this.x < width / 10 || this.x > width*0.8)
       this.xSpeed *= -1;
-    if (this.y < height / 10 || this.y > height)
+    if (this.y < height / 10 || this.y > height*2)
       this.ySpeed *= -1;
     this.x += this.xSpeed;
     this.y += this.ySpeed;
@@ -78,7 +78,7 @@ function setup() {
   //cnv = createCanvas(windowWidth*0.9, windowHeight/2);
   let bkcontainer = document.getElementById('background-container');
 
-  cnv = createCanvas(bkcontainer.offsetWidth, bkcontainer.offsetHeight);
+  cnv = createCanvas(bkcontainer.offsetWidth, windowHeight/2);
   cnv.parent(bkcontainer);
  // cnv.style("z-index: 10");
   cnv.position(0,0);
