@@ -57,7 +57,7 @@ class Particle {
     particles.forEach(element => {
       let dis = dist(this.x, this.y, element.x, element.y);
       if (dis < 150) {
-        stroke('rgba(255,255,255)');
+        stroke('#ffff00');
         strokeWeight(0.5);
         line(this.x, this.y, element.x, element.y);
       }
@@ -140,6 +140,9 @@ function draw() {
 
        document.getElementById(concat(str(data.getColumn('names')[i]), str(i))).onmouseover = function() {
         document.getElementById(concat(str(data.getColumn('names')[i]), str(i))).style.backgroundColor = c;
+          document.getElementById(concat(str(data.getColumn('names')[i]), str(i))).style.border = '5px solid';
+            document.getElementById(concat(str(data.getColumn('names')[i]), str(i))).style.borderColor = c;
+           document.getElementById(concat(str(data.getColumn('names')[i]), str(i))).style.boxShadow = '0 0 10px #ffff00';
       //circlesDiv[i].style('background-color', c);
        particles[i].xSpeed *= 0;
        particles[i].ySpeed *= 0;
@@ -149,6 +152,8 @@ function draw() {
 
     document.getElementById(concat(str(data.getColumn('names')[i]), str(i))).onmouseout = function() {
    document.getElementById(concat(str(data.getColumn('names')[i]), str(i))).style.backgroundColor = '#fff';
+      document.getElementById(concat(str(data.getColumn('names')[i]), str(i))).style.borderStyle = 'none';
+                 document.getElementById(concat(str(data.getColumn('names')[i]), str(i))).style.boxShadow = 'none';
        particles[i].ySpeed +=random(-1.5,1.5);
     particles[i].moveParticle(particles[i]);
     particles[i].joinParticles(particles.slice(i));
