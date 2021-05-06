@@ -12,13 +12,14 @@ let changesColors = false;
 let hoverNames;
 let idstring;
 let particleIsStop = false;
-let cnvW,cn
+let currentSpeedx,currentSpeedy;
+
 class Particle {
   // setting the co-ordinates, radius and the
   // speed of a particle in both the co-ordinates axes.
   constructor() {
-    this.x = random(40, width - 30);
-    this.y = random(40, height - 30);
+    this.x = random(30, width - 30);
+    this.y = random(30, height - 30);
     this.r = 15;
     this.xSpeed = random(-0.5, 0.5);
     this.ySpeed = random(-0.5, 0.5);
@@ -55,14 +56,15 @@ class Particle {
   joinParticles(particles) {
     particles.forEach(element => {
       let dis = dist(this.x, this.y, element.x, element.y);
-      if (dis < 200) {
+      if (dis < 100) {
         stroke('rgba(255,255,255)');
-        strokeWeight(1.5);
+        strokeWeight(0.5);
         line(this.x, this.y, element.x, element.y);
       }
     });
   }
 }
+
 
 // an array to add multiple particles
 let particles = [];
@@ -73,8 +75,8 @@ function preload() {
 }
 
 function setup() {
-  //cnv = createCanvas(width, height);
-  let bkcontainer = document.getElementById('background-container')
+  //cnv = createCanvas(windowWidth*0.9, windowHeight/2);
+  let bkcontainer = document.getElementById('background-container');
 
   cnv = createCanvas(bkcontainer.offsetWidth, bkcontainer.offsetHeight);
   cnv.parent(bkcontainer);
@@ -82,6 +84,7 @@ function setup() {
   cnv.position(0,0);
   for (let i = 0; i < data.getRowCount(); i++) {
     particles.push(new Particle());
+
       namea = createElement('a');
     circles=createElement('div');
         namea.style('color', '#fff');
@@ -102,11 +105,7 @@ function setup() {
   console.log("namesdiv#" + namesdiv.length);
   rectMode(CENTER);
   textFont(myFont);
-  console.log(data.getRowCount());
-  // what are the columns?
-  console.log(data.columns);
-  print(data.getColumn('names'));
-  print(data.getColumn('colors')[0]);
+
 
   //console.log(names.length);
  // let pdiv = document.getElementById('page_middle');
@@ -125,9 +124,10 @@ function draw() {
     // fill(c);
     let c = color(str(data.getColumn('colors')[i]));
 //     particles[i].createParticle(data.getColumn('names')[i], c);
-
-//     particles[i].moveParticle();
+//      particles[i].moveParticle(particles[i]);
 //     particles[i].joinParticles(particles.slice(i));
+//     let currentSpeedx =  particles[i].xSpeed;
+// let currentSpeedy =  particles[i].ySpeed;
 
 
 //     //  namesdiv[i].style('color','#fff');
@@ -138,12 +138,19 @@ function draw() {
 //     namesdiv[i].position(particles[i].x, particles[i].y - 20);
 
        document.getElementById(str(data.getColumn('names')[i])).onmouseover = function() {
-      document.getElementById(str(data.getColumn('names')[i])).style.color = c;
-      particles[i].stopParticle();
+        document.getElementById(str(data.getColumn('names')[i])).style.color = c;
+       particles[i].xSpeed *= 0;
+       particles[i].ySpeed *= 0;
+  
     };
+    
+
     document.getElementById(str(data.getColumn('names')[i])).onmouseout = function() {
-    document.getElementById(str(data.getColumn('names')[i])).style.color = '#000';
-    particles[i].moveParticle();
+    document.getElementById(str(data.getColumn('names')[i])).style.color = '#fff';
+       particles[i].xSpeed += random(-0.5,0.5);
+       particles[i].ySpeed +=random(-0.5,0.5);
+    particles[i].moveParticle(particles[i]);
+    particles[i].joinParticles(particles.slice(i));
     };
     particles[i].createParticle(data.getColumn('names')[i], c);
 
@@ -169,5 +176,6 @@ function changeColors(){
   }
 }
 function windowResized() {
-  cnv = resizeCanvas(width, height);
+   let bkcontainer = document.getElementById('background-container');
+  cnv = resizeCanvas(width,height);
 }

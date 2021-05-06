@@ -31,11 +31,11 @@ a {
 
 
 .centerButton{
-  height: 50px;
-  width: 50px;
+  height: 150px;
+  width: 150px;
   position: absolute;
-  top:1vh;
-   right:1vw;
+  top:2vh;
+   right:2vw;
    border-radius: 50%;
 /*    top: 70%;
     left: 50%;
@@ -48,6 +48,6 @@ a {
 }
 .centerButton:hover{
   box-shadow: 12px 12px 2px 1px rgba(100, 100, 100, .5);
- border: 2px solid black;
+ border: 2px solid green;
 
 }
