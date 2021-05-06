@@ -56,8 +56,8 @@ class Particle {
     particles.forEach(element => {
       let dis = dist(this.x, this.y, element.x, element.y);
       if (dis < 200) {
-        stroke('rgba(255,255,255,0.5)');
-        strokeWeight(1);
+        stroke('rgba(255,255,255)');
+        strokeWeight(1.5);
         line(this.x, this.y, element.x, element.y);
       }
     });
