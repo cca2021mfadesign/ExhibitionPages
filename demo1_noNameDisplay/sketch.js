@@ -3,6 +3,7 @@
 
 
 let data;
+let videolinks;
 let cnv;
 let circlesDiv = [];
 let namesdiv = [];
@@ -13,7 +14,11 @@ let hoverNames;
 let idstring;
 let particleIsStop = false;
 let currentSpeedx,currentSpeedy;
-
+let refParticles =[];
+let refDiv= [];
+let reflink;
+let diameter;
+let angle = 0;
 class Particle {
   // setting the co-ordinates, radius and the
   // speed of a particle in both the co-ordinates axes.
@@ -72,16 +77,24 @@ let particles = [];
 function preload() {
   myFont = loadFont('TINY5x3-140.otf');
   data = loadTable('name-colors.csv', 'csv', 'header')
+  videolinks = loadTable('articles.csv','csv', 'header');
 }
 
 function setup() {
   //cnv = createCanvas(windowWidth*0.9, windowHeight/2);
   let bkcontainer = document.getElementById('background-container');
-
+ diameter = 50;
   cnv = createCanvas(bkcontainer.offsetWidth, windowHeight * 0.7);
   cnv.parent(bkcontainer);
  // cnv.style("z-index: 10");
   cnv.position(0,0,);
+  for(let i=0; i<videolinks.getRowCount();i++){
+refParticles.push(new Particle());
+reflink = createElement('a');
+reflink.style('background-color', '#ffff00');
+refDiv.push(reflink);
+}
+
   for (let i = 0; i < data.getRowCount(); i++) {
     particles.push(new Particle());
 
@@ -89,11 +102,8 @@ function setup() {
     circles=createElement('a');
       namea.style('color', '#fff');
       circles.style('background-color','#fff');
-    //namea.style('font-size', '35px');
     namesdiv.push(namea);
     circlesDiv.push(circles);
-   
-    //namesdiv.push(namea);
   }
   for (let n = 0; n < namesdiv.length; n++) {
     namesdiv[n].id(str(data.getColumn('names')[n]));
@@ -117,9 +127,46 @@ function draw() {
  // background('#0f0f0f');
  //background('rgba(255,255,255, 0.001)');
  clear();
-
+let d2 = 10 + (sin(angle + PI / 2) * diameter) / 2 + diameter / 2;
 //  background(100);
   //  background(100);
+  for(let i= 0; i<refParticles.length; i++){
+    let c= color(255,255,255);
+refDiv[i].id (concat("video", str(i)));
+refDiv[i].position(refParticles[i].x + 150, refParticles[i].y + 175);
+document.getElementById(concat("video", str(i))).style.width = str(concat(str(d2), 'px'));
+document.getElementById(concat("video", str(i))).style.height = str(concat(str(d2), 'px'));
+document.getElementById(concat("video", str(i))).style.borderRadius = '50%';
+document.getElementById(concat("video", str(i))).href=videolinks.getColumn('articles')[i];
+document.getElementById(concat("video", str(i))).style.border = '1px solid';
+document.getElementById(concat("video", str(i))).style.borderColor = '#fff000';
+document.getElementById(concat("video", str(i))).style.boxShadow = '0 0 10px #ffff00';
+
+
+ document.getElementById(concat("video", str(i))).onmouseover = function() {
+      //circlesDiv[i].style('background-color', c);
+       refParticles[i].xSpeed *= 0;
+       refParticles[i].ySpeed *= 0;
+  
+    };
+    
+
+    document.getElementById(concat(str(data.getColumn('names')[i]), str(i))).onmouseout = function() {
+
+    refParticles[i].ySpeed +=random(-1.5,1.5);
+    refParticles[i].moveParticle(particles[i]);
+    refParticles[i].joinParticles(particles.slice(i));
+    };
+
+
+refParticles[i].createParticle(videolinks.getColumn('')[i],c );
+refParticles[i].moveParticle();
+refParticles[i].joinParticles(particles.slice(i));
+
+
+}
+
+angle += 0.02;
   for (let i = 0; i < particles.length; i++) {
 
     // fill(c);
@@ -154,10 +201,12 @@ function draw() {
    document.getElementById(concat(str(data.getColumn('names')[i]), str(i))).style.backgroundColor = '#fff';
       document.getElementById(concat(str(data.getColumn('names')[i]), str(i))).style.borderStyle = 'none';
                  document.getElementById(concat(str(data.getColumn('names')[i]), str(i))).style.boxShadow = 'none';
-       particles[i].ySpeed +=random(-1.5,1.5);
+    particles[i].ySpeed +=random(-1.5,1.5);
     particles[i].moveParticle(particles[i]);
     particles[i].joinParticles(particles.slice(i));
     };
+    
+
     particles[i].createParticle(data.getColumn('names')[i], c);
 
     particles[i].moveParticle();
