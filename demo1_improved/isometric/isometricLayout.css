@@ -1,3 +1,5 @@
+
+/**** all assets ***/
  body{
   font-family: 'Saira Extra Condensed', sans-serif;
   color: black;
@@ -17,7 +19,7 @@ img{
 
 }
 p {
-  font-size: 2.4vw;
+  font-size: 13px;
   padding: 1.5vw 1vw 1vw 1vw;
   margin-bottom: 1px;
 }
@@ -49,8 +51,9 @@ background-color: white;
       grid-column-end: span 3;
   grid-row-start: 6;
   grid-row-end: span 7;  
-  transform: rotateZ(360deg) skewY(-30deg);
+  transform: rotateZ(0deg) skewY(-30deg);
 background-color: red;
+
 }
 
 
@@ -59,10 +62,11 @@ background-color: red;
     grid-column-end: span 3;
     grid-row-start: 3;
     grid-row-end: span 7;
-transform: rotateZ(360deg) skewY(30deg);
-font-size: 17px;
+transform: rotateZ(0deg) skewY(30deg);
+font-size: 13px;
 box-shadow: 0 0 30px white;
 background-color: yellow;
+
 }
 
 .leftHolder > *:nth-child(4){
@@ -186,3 +190,61 @@ transform: rotateZ(360deg) skewY(30deg);
 background-color: green;
 box-shadow: 0 0 30px white;
 }
+/*** end ***/
+
+
+/* -------------------------- */
+/* CLASSES TO MAKE MODAL WORK */
+
+.more {display: none;}
+.rmore{display: none;}
+
+/* The Close Button */
+ .close, .rclose{
+  opacity: 0;
+  color: #aaaaaa;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+}
+
+.rclose:hover, .rclose:focus, .close:hover,
+.close:focus {
+  color: #000;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.ractualTexts, .actualTexts{
+  padding: 20px;
+}
+
+@keyframes rotateDivOn {
+  from {transform: rotateZ(0deg) skewY(30deg);}
+  to {transform: rotate(0);}
+}
+@keyframes rotateDivBack {
+ 
+  from {transform: rotate(0);}
+   to{transform: rotateZ(0deg) skewY(30deg);}
+}
+
+/*** for right side ****/
+@keyframes rotateDivOnR {
+  from {transform: rotateZ(
+-60deg
+) skewY(
+30deg
+);}
+  to {transform: rotate(0);}
+}
+@keyframes rotateDivBackR {
+ 
+  from {transform: rotate(0);}
+   to{transform: rotateZ(
+-60deg
+) skewY(
+30deg
+);}
+}
+

@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+
+<style type="text/css">
+.leftHolder {
+  display:grid;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  grid-template-columns: repeat(auto-fill, 5vw);
+  grid-auto-rows: 2.88675vw;
+  padding-bottom: 4%;
+    transform: rotateZ(0deg) skewY(-30deg);
+}
+	.samplediv{
+display: block;
+grid-column-start: 13;  
+ grid-column-end: span 3;
+  grid-row-start: 6;
+  grid-row-end: span 7;  
+font-size: 13px;
+background-color: red;
+	}
+.more {display: none;}
+
+/* The Modal (background) */
+.modal {
+  /* Hidden by default */
+  position: fixed; /* Stay in place *//* Sit on top */
+  padding-top: 100px; /* Location of the box */
+  left: 0;
+  top: 0;
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  overflow: auto; /* Enable scroll if needed */
+  background-color: rgb(0,0,0); /* Fallback color */
+  background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+}
+
+/* Modal Content */
+.modal-content {
+  background-color: #fefefe;
+  margin: auto;
+  padding: 20px;
+  border: 1px solid #888;
+  width: 80%;
+}
+
+/* The Close Button */
+ .close {
+	opacity: 0;
+  color: #aaaaaa;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+  color: #000;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.actualTexts{
+	padding: 20px;
+}
+
+@keyframes rotateDivOn {
+  from {transform: rotateZ(0deg) skewY(-30deg);}
+  to {transform: rotate(0);}
+}
+@keyframes rotateDivBack {
+ 
+  from {transform: rotate(0);}
+   to{transform: rotateZ(0deg) skewY(-30deg);}
+}
+</style>
+<div id="leftHolder" class="leftHolder"><div id="samplediv" class="samplediv"> <span id="close" class="close">&times;</span><p class="actualTexts" id="actualTexts">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus imperdietl<span class="dots" id="dots">...</span> <span class="myBtn"style="color: #fff000" onclick="myFunction()" id="myBtn">more</span><span class="more" id="more">erisque enim ligula venenatis dolor. Maecenas nisl est, ultrices nec congue eget, auctor vitae massa. Fusce luctus vestibulum augue ut aliquet. Nunc sagittis dictum nisi, sed ullamcorper ipsum dignissim ac. In at libero sed nunc venenatis imperdiet sed ornare turpis. Donec vitae dui eget tellus gravida venenatis. Integer fringilla congue eros non fermentum. Sed dapibus pulvinar nibh tempor porta.</span></p></div></div>
+
+<script>
+function myFunction() { 
+  var dots = document.querySelector('.dots');
+  var moreText = document.querySelector('.more');
+  var btnText = document.querySelector('.myBtn');
+const leftHolder=document.querySelector('.leftHolder');
+var samplediv = document.querySelector(".samplediv");
+var close = document.querySelector('.close');
+var actualTexts = document.querySelector('.actualTexts');
+    btnText.style.color = "#fff000";
+  if (dots.style.display === "none") {
+    dots.style.display = "inline";
+    moreText.style.display = "none";
+  //   leftHolder.style.transform = "rotateZ(360deg) skewY(-30deg)";
+    leftHolder.style.animationName = "rotateDivBack";
+    leftHolder.style.animationDuration = "1s";
+    leftHolder.style.transform = "rotate(0) skewY(-30deg)"; 
+    samplediv.style.transform = "scale(1)";
+    btnText.innerHTML = "more"; 
+    samplediv.style.width = "100%";
+    close.style.opacity= 0;
+
+   // close.style.opacity=0;
+     //	samplediv.style.transform="rotateZ(360deg) skewY(-30deg)";
+  } else {
+    btnText.innerHTML = ""; 
+    close.style.opacity= 1;
+    close.style.padding="12px";
+    leftHolder.style.animationName = "rotateDivOn";
+    leftHolder.style.animationDuration = "1s";
+    leftHolder.style.transform = "rotate(0)"; 
+    dots.style.display = "none";
+    moreText.style.display = "block";
+    samplediv.style.width = "200%";
+    actualTexts.style.padding = "20px";
+  }
+  close.onclick = function(){
+  	dots.style.display = "inline";
+    moreText.style.display = "none";
+   // leftHolder.style.transform = "rotateZ(360deg) skewY(-30deg)";
+    leftHolder.style.animationName = "rotateDivBack";
+    leftHolder.style.animationDuration = "1s";
+    leftHolder.style.transform = "rotate(0) skewY(-30deg)"; 
+    samplediv.style.transform = "scale(1)";
+    btnText.innerHTML = "more"; 
+    samplediv.style.width = "100%";
+    close.style.opacity= 0;
+ 
+  }
+}
+</script>
+</body>
+</html>
