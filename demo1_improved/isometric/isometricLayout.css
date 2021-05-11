@@ -175,6 +175,7 @@ grid-row-end: span 9;
 transform: rotateZ(360deg) skewY(30deg);
 box-shadow: 0 0 30px yellow;
 background-color: white;
+z-index: 2;
 /*font-size: 60px;*/
 }
 
