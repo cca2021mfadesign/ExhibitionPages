@@ -227,12 +227,15 @@ box-shadow: 0 0 30px white;
 .rmore{display: none;}
 
 /* The Close Button */
- .close, .rclose{
+ .close, .rclose .myBtn, .rmyBtn{
   opacity: 0;
   color: #aaaaaa;
   float: right;
   font-size: 28px;
   font-weight: bold;
+}
+.myBtn, .rmyBtn{
+color:black;
 }
 
 .rclose:hover, .rclose:focus, .close:hover,

@@ -36,7 +36,7 @@ btnText[i].addEventListener('click', function(){
     samplediv[i].style.animationName = "rotateDivBack";
     samplediv[i].style.animationDuration = "1s";
    samplediv[i].style.transform = "scale(1) rotate(0) skewY(30deg)"; 
-    btnText[i].innerHTML = "Expand"; 
+    btnText[i].innerHTML = "MORE"; 
     samplediv[i].style.width = "100%";
         samplediv[i].style.height = "100%";
     close[i].style.opacity= 0;
@@ -84,7 +84,7 @@ for(var i =0; i<rbtnText.length; i++){
   //   leftHolder.style.transform = "rotateZ(360deg) skewY(-30deg)";
     rsamplediv[i].style.animationName = "rotateDivBackR";
     rsamplediv[i].style.animationDuration = "1s";
-    rbtnText[i].innerHTML = "Expand"; 
+    rbtnText[i].innerHTML = "MORE"; 
     rsamplediv[i].style.width = "100%";
     rclose[i].style.opacity= 0;
     rsamplediv[i].style.transform = "scale(1) rotateZ(-60deg) skewY(30deg)"; 
