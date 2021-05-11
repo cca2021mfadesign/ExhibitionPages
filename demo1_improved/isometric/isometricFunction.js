@@ -7,8 +7,8 @@ var samplediv = document.querySelectorAll(".samplediv");
 var close = document.querySelectorAll('.close');
 var dots = document.querySelectorAll('.dots');
 var lStatementsContents = document.querySelectorAll('.lStatementsContents');
-var i= 0;
-for(i =0; i<btnText.length; i++){
+
+for(var i =0; i<btnText.length; i++){
 (function(i) {
 btnText[i].addEventListener('click', function(){
     btnText[i].innerHTML = ""; 
@@ -20,6 +20,8 @@ btnText[i].addEventListener('click', function(){
     dots[i].style.display = "none";
     moreText[i].style.display = "block";
     samplediv[i].style.width = "200%";
+
+    samplediv[i].style.height = "200%";
     lStatementsContents[i].style.padding = "20px";
     samplediv[i].style.transform = "rotate(0)";
      samplediv[i].style.zIndex= "10";
@@ -36,6 +38,7 @@ btnText[i].addEventListener('click', function(){
    samplediv[i].style.transform = "scale(1) rotate(0) skewY(30deg)"; 
     btnText[i].innerHTML = "Expand"; 
     samplediv[i].style.width = "100%";
+        samplediv[i].style.height = "100%";
     close[i].style.opacity= 0;
 
  
@@ -53,8 +56,8 @@ btnText[i].addEventListener('click', function(){
    var rclose = document.querySelectorAll('.rclose');
 var rStatementsContents = document.querySelectorAll('.rStatementsContents');
  //   rbtnText.style.color = "#000";
-var i= 0;
-for(i =0; i<rbtnText.length; i++){
+
+for(var i =0; i<rbtnText.length; i++){
 (function(i) {
     rbtnText[i].addEventListener('click', function(){
     rbtnText[i].innerHTML = ""; 
