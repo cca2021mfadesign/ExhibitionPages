@@ -26,8 +26,8 @@ class Particle {
     this.x = random(230, width - 130);
     this.y = random(230, height - 130);
     this.r = 15;
-    this.xSpeed = random(-1.5, 1.5);
-    this.ySpeed = random(-1.5, 1.5);
+    this.xSpeed = random(-0.25, 0.25);
+    this.ySpeed = random(-0.25, 0.25);
   }
 
   // creation of a particle.
@@ -209,8 +209,8 @@ angle += 0.02;
        document.getElementById(concat(str(data.getColumn('names')[i]), str(i))).style.backgroundColor = '#fff';
       document.getElementById(concat(str(data.getColumn('names')[i]), str(i))).style.borderStyle = 'none';
                  document.getElementById(concat(str(data.getColumn('names')[i]), str(i))).style.boxShadow = 'none';
-       particles[i].xSpeed += random(-1.5,1.5);
-       particles[i].ySpeed +=random(-1.5,1.5);
+       particles[i].xSpeed += random(-0.25,0.25);
+       particles[i].ySpeed +=random(-0.25,0.25);
     particles[i].moveParticle(particles[i]);
     particles[i].joinParticles(particles.slice(i));
     };
