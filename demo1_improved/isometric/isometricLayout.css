@@ -59,10 +59,12 @@ p {
   grid-auto-rows: 2.88675vw;
   padding-bottom: 25%;
   margin-top: 4%;
+  margin-left: -5%;
 }
 .leftHolder > *{
   transform-origin: top left;
   background-color: white;
+
  /* line-height: 100%;*/
 }
 .leftHolder > *:nth-child(1){
@@ -74,7 +76,7 @@ grid-row-end: span 11;
 background-color: white;
 /*font-size: 60px;*/
 text-align: center;
-box-shadow: 0 0 30px #ffff00; 
+  box-shadow: 10px 10px 54px -6px rgba(0,0,0,0.75);
 background-color: white;
 
 }
@@ -98,8 +100,7 @@ grid-row-start: 3;
 grid-row-end: span 7;
 transform: rotateZ(0deg) skewY(30deg);
 font-size: 13px;
-box-shadow: 0 0 30px #ffff00; 
-
+  box-shadow: 10px 10px 54px -6px rgba(0,0,0,0.75);
 background-color: white;
 
 }
@@ -110,7 +111,7 @@ grid-row-start: 15;
 grid-column-end: span 5;
 grid-row-end: span 6;
 transform: rotateZ(-60deg) skewY(30deg);
-box-shadow: 0 0 30px #ffff00; 
+  box-shadow: 10px 10px 54px -6px rgba(0,0,0,0.75);
 
 background-color: white;
 }
@@ -121,7 +122,7 @@ background-color: white;
   grid-column-end: span 4;  
   grid-row-end: span 4;  
   transform: skewY(330deg);
-  box-shadow: 0 0 30px #ffff00; 
+  box-shadow: 10px 10px 54px -6px rgba(0,0,0,0.75);
 
 }
 
@@ -152,7 +153,7 @@ transform: rotateZ(-60deg) skewY(30deg);
   grid-auto-rows: 2.88675vw;
  margin-bottom: 1%;
   margin-top: -4%;
-
+  margin-right: -15%;
 
 }
 .rightHolder > *{
