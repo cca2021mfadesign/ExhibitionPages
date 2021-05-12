@@ -83,7 +83,7 @@ background-color: white;
 grid-column-start: 13;  
 grid-column-end: span 3;
 grid-row-start: 6;
-grid-row-end: span 7;  
+grid-row-end: span 3;  
 transform: rotateZ(0deg) skewY(-30deg);
 background-color: white;
 font-size: 30px;
@@ -175,7 +175,7 @@ background-color: white;
 grid-column-start: 7;  
 grid-column-end: span 3;
 grid-row-start: 6;
-grid-row-end: span 7;  
+grid-row-end: span 3;  
 transform: rotateZ(360deg) skewY(-30deg);
 box-shadow: 0 0 30px #ffff00; 
 ;
@@ -363,6 +363,8 @@ z-index: 10;
   height: 100%;
   overflow: auto;
   background-color: black;
+    overflow-x: hidden;
+  overflow-y: scroll;
 }
 .modal img{
 transform: rotateZ(0deg) skewY(0deg);
