@@ -141,6 +141,7 @@ document.getElementById(concat("video", str(i))).style.width = str(concat(str(d2
 document.getElementById(concat("video", str(i))).style.height = str(concat(str(d2), 'px'));
 document.getElementById(concat("video", str(i))).style.borderRadius = '50%';
 document.getElementById(concat("video", str(i))).href=videolinks.getColumn('articles')[i];
+document.getElementById(concat("video", str(i))).target="_blank"; 
 document.getElementById(concat("video", str(i))).style.border = '1px solid';
 document.getElementById(concat("video", str(i))).style.borderColor = '#fff000';
 document.getElementById(concat("video", str(i))).style.boxShadow = '0 0 10px #ffff00';
