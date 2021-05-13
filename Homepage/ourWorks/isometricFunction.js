@@ -104,3 +104,22 @@ for(var i =0; i<rbtnText.length; i++){
   })(i)
 }
 
+
+
+var frames = document.getElementsByTagName('iframe');
+var videoCloseb = document.querySelectorAll('iframe > .videoClose');
+for(let i=0; i<frames.length;i++){
+  frames[i].style.padding="40px";
+  (function(i) {
+    frames[i].addEventListener('click', function(){
+    videoCloseb[i].style.opacity=1;
+    });
+
+  })(i);
+  (function(i){
+    videoCloseb[i].addEventListener('click', function(){
+    frames[i].style.transform="skewY(330deg)";
+    });
+  })(i);
+}
+

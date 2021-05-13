@@ -276,6 +276,7 @@ transform: rotateZ(0deg) skewY(30deg);
 color:black;
 }
 
+
 .rclose:hover, .rclose:focus, .close:hover,
 .close:focus {
   color: #000;
@@ -285,6 +286,9 @@ color:black;
 
 .ractualTexts, .actualTexts{
   padding: 20px;
+}
+.iframeRot{
+    transform: skewY(0);
 }
 
 
