@@ -1,0 +1,408 @@
+	<!DOCTYPE html><html>
+  <head>
+    <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">    
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+         <title>demo1.html</title>
+        <meta name="description" content="Animated Responsive Image Grid - Cycling through a set of in a responsive grid." />
+        <meta name="keywords" content="grid,, thumbnails, responsive, css3, jquery, javascript, random, transition, 3d, perspective" />
+        <meta name="author" content="Codrops" />
+        <link rel="shortcut icon" href="images/waww.png"> 
+
+    <script type="text/javascript" src="js/modernizr.custom.26633.js"></script>
+      <link rel="stylesheet" type="text/css" href="css/backgroundstyle.css" />
+    <noscript>
+      <link rel="stylesheet" type="text/css" href="css/backgroundfallback.css" />
+    </noscript>
+
+<!--     <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>  -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.3.1/p5.min.js"></script>
+  <!--      <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script> -->
+    <link rel="stylesheet" type="text/css" href="style.css">
+
+ <style type="text/css">
+  @import url('https://fonts.googleapis.com/css2?family=Signika&display=swap');
+  .centerButton{
+  height: 150px;
+  width: 150px;
+  position: absolute;
+  top:2vh;
+   right:2vw;
+   border-radius: 50%;
+}
+.centerButton1{
+  height: 150px;
+  width: 150px;
+  position: absolute;
+  top:2vh;
+  right:calc(2vh + 200px);
+    border-radius: 50%;
+}
+.rot{
+  transform: rotateZ(90deg);
+}
+
+ .centerButton:hover,.centerButton1:hover{
+  box-shadow: 12px 12px 2px 1px rgba(100, 100, 100, .5);
+ border: 2px #000;
+
+}
+/*.centerButton1:hover{
+  transform: rotateZ(-90deg);
+}*/
+   .popup-flex{
+  margin:30px;
+}
+.popup-container {
+    visibility: hidden;
+    opacity: 0;
+    transition: all 0.3s ease-in-out;
+    transform: scale(1.3);
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(21, 17, 17, 0.61);
+    display: flex;
+    align-items: center;
+}
+.popup-content {
+    background-color: #ffff00;
+    margin: auto;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 50%;
+
+}
+.popup-content p{
+    font-family: 'Signika', sans-serif;
+    font-size: 17px;
+    padding: 10px;
+    line-height: 35px;
+}
+.popup-content span{
+    color: #aaaaaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.popup-content span:hover,
+.popup-content span:focus {
+    color: #000;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.show{
+  visibility: visible;
+  opacity: 1;
+  transform: scale(1);
+}
+
+.canvasSection{
+  width: 90%;
+  height: 70%;
+  display: inline-block;
+  background-color: transparent;
+  margin:10vw;
+  top: 5vh;
+  position: absolute;
+
+}
+
+.titleClass{
+font-family: myTinyFont;
+font-size: 40px;
+}
+
+.ulclass {
+  list-style: none;
+  padding: 0;
+  margin: auto;
+  align-items: center;
+  align-content: center;
+  justify-content: center;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+li{
+ 
+  align-items: center;
+  align-content: center;
+  justify-content: center;
+  display: flex;
+  flex-wrap: wrap;
+ 
+
+}
+
+a img {
+ height: calc(60vw / 5);
+  width: calc(60vw / 5);
+  margin: 8%;
+  left: 10px;
+}
+
+/****drop down ****/
+.dropbtn {
+  background-color: #3498DB;
+  color: white;
+  padding: 16px;
+  font-size: 16px;
+  border: none;
+  cursor: pointer;
+}
+
+.dropbtn:hover, .dropbtn:focus {
+  background-color: #2980B9;
+}
+
+.dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #f1f1f1;
+  min-width: 160px;
+  overflow-y: auto;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+
+}
+
+.dropdown-content a {
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+  font-family: 'Signika', sans-serif;
+  overflow-y: scroll;
+  font-size: 14px;
+}
+
+.dropdown-content a:hover {background-color: #ddd; color:#ffff00;}
+
+.show {display: block;}
+
+@media (max-width:600px){
+ 
+ canvas{
+  opacity: 0;
+ }
+ .centerButton1{
+  height: 50px;
+  width: 50px;
+  position: absolute;
+  top:2vh;
+  right:calc(2vh + 100px);
+  border-radius: 50%;
+}
+
+  .ulclass {
+  list-style: none;
+  padding: 0;
+  margin: auto;
+  align-items: center;
+  align-content: center;
+  justify-content: center;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+  .canvasSection{
+  width: 90vw;
+  height: 70%;
+  display: inline-block;
+  background-color: transparent;
+  margin:10vw;
+  top: 5vh;
+  position: absolute;
+  }
+  body{
+    background-color: #000;
+  }
+  .centerButton{
+  height: 50px;
+  width: 50px;
+  position: absolute;
+  top:2vh;
+   right:2vw;
+   border-radius: 50%;
+
+ }
+ .centerButton:.hover,.centerButton1:hover{
+  box-shadow: 12px 12px 2px 1px rgba(100, 100, 100, .5);
+ border: 2px #fff;
+
+}
+a {
+  font-family: myTinyFont;
+  font-size: 15px;
+}
+   
+   li{
+ 
+  align-items: center;
+  align-content: center;
+  justify-content: center;
+  display: absolute;
+  flex-wrap: wrap;
+ 
+
+}
+
+a img {
+ height: 105%;
+  width: 105%; 
+  display: inline-block;
+
+}
+.main{
+  width: 95%;
+  height: auto;
+  display: inline-block;
+  margin-left: 2.5%;
+   margin-right: 2.5%;
+ padding-top: 40%;
+
+}
+}
+ </style>
+	<body>
+
+
+     <img id="popup-btn" class="centerButton" src="images/favicon.png">
+       <img id="popup-btn1" onclick="myFunction()"class="centerButton1" src="images/down_arrow.png">
+       <div id="myDropdown" class="dropdown-content">
+<a href="#">Home</a>
+<a href="ourWorks/designers.html#abigayle">Abigayle Cosinuke</a>
+<a href="ourWorks/designers.html#ashlyn">Ashlyn Jackson</a>
+<a href="ourWorks/designers.html#chloe">Chloe Looker</a>
+<a href="ourWorks/designers.html#narae">Danielle Kim</a>
+<a href="ourWorks/designers.html#dom">Dom Granato</a>
+<a href="ourWorks/designers.html#eryn">Eryn Bathke</a>
+<a href="ourWorks/designers.html#fuming">Fuming Zhao</a>
+<a href="ourWorks/designers.html#hancai">Hancai Wang</a>
+<a href="ourWorks/designers.html#haojie">Haojie Chai</a>
+<a href="ourWorks/designers.html#jason">Jason Malik</a>
+<a href="ourWorks/designers.html#kaiwen">Kaiwen Liu</a>
+<a href="ourWorks/designers.html#keyu">Keyu Mao</a>
+<a href="ourWorks/designers.html#meg">Meg Quarton</a>
+<a href="ourWorks/designers.html#mengwen">Mengwen Yu</a>
+<a href="ourWorks/designers.html#chancie">Qianshi Zheng</a>
+<a href="ourWorks/designers.html#rebecca">Rebecca Gardea</a>
+<a href="ourWorks/designers.html#sarah">Sarah Chieko Bonnickson</a>
+<a href="ourWorks/designers.html#ted">Ted Chen</a>
+<a href="ourWorks/designers.html#tiaoli">Tiaoli li</a>
+<a href="ourWorks/designers.html#tin">Tin Dinh</a>
+<a href="ourWorks/designers.html#tingyu">Tingyu Zhao</a>
+<a href="ourWorks/designers.html#troy">Troy Taylor</a>
+<a href="ourWorks/designers.html#wen">Wen Liu</a>
+<a href="ourWorks/designers.html#xiaohan">Xiaohan Hannah Liao</a>
+<a href="ourWorks/designers.html#yashan">Yashan Deng</a>
+  </div>
+<script>
+/* When the user clicks on the button, 
+toggle between hiding and showing the dropdown content */
+function myFunction() {
+  document.getElementById("myDropdown").classList.toggle("show");
+  document.getElementById("popup-btn1").classList.toggle("rot");
+}
+
+// Close the dropdown if the user clicks outside of it
+window.onclick = function(event) {
+  if (!event.target.matches('.dropbtn')) {
+    var dropdowns = document.getElementsByClassName("dropdown-content");
+    var downArrows = document.getElementsByClassName("centerButton1");
+    var i;
+    for (i = 0; i < dropdowns.length; i++) {
+      var openDropdown = dropdowns[i];
+      if (openDropdown.classList.contains('show')) {
+        openDropdown.classList.remove('show');
+
+      }
+    }
+
+    for(let i=0; i<downArrows.length;i++){
+      var downArrow = downArrows[i];
+      if(downArrow.classList.contains('rot')){
+        downArrow.classList.remove('rot');
+      }
+    }
+  }
+}
+</script>
+     <div id="popup-wrapper" class="popup-container">
+  <div class="popup-content">
+    <span id="close">&times;</span>
+    <center><h1 class="titleClass">CURATORIAL STATEMENT</h1></center>
+    <p>This has been a year of loss, both personal and universal. But for the Thesis class of 2021, it’s also been a time of getting lost: in the process, in our minds, in our work.  In her book A Field Guide to Getting Lost, Rebecca Solnit says, “Lost really has two disparate meanings. Losing things is about the familiar falling away, getting lost is about the unfamiliar appearing.” In an unfamiliar world, we’ve been restricted to a year of virtual classes and critiques. But rather than letting this technological mediation interfere in our work, we’ve managed to wander through uncharted territory, arriving at singular moments of beauty, innovation, and potential. Connecting the dots across cyberspace, we arrive here, together. Where are we? What the hell (is going on)? celebrates the work created as we’ve navigated through an unfamiliar year of wide unknowns.  We welcome you to come into our process, and get lost with us. This is not a final destination, just an anchor on our voyage. We are still sailing in different directions, sailing into the unknown.</p>
+  </div>
+</div>
+<script type="text/javascript">
+  var popup = document.getElementById('popup-wrapper');
+var btn = document.getElementById("popup-btn");
+var span = document.getElementById("close");
+btn.onclick = function() {
+    popup.classList.add('show');
+}
+span.onclick = function() {
+    popup.classList.remove('show');
+}
+
+window.onclick = function(event) {
+    if (event.target == popup) {
+        popup.classList.remove('show');
+    }
+}
+</script>
+<section id="background-container"  class="canvasSection">
+
+</section>
+
+
+<section id="images-grid" class="main">
+
+<div class="galeria">
+  <ul class='ulclass'>
+            <li><a href="ourWorks/designers.html#abigayle"><img src="images/temproray/pic1.png"/></a></li>
+            <li><a href="ourWorks/designers.html#ashlyn"><img src="images/temproray/pic2.png"/></a></li>
+            <li><a href="ourWorks/designers.html#chloe"><img src="images/temproray/pic3.png"/></a></li>
+            <li><a href="ourWorks/designers.html#narae"><img src="images/temproray/pic4.png"/></a></li>
+            <li><a href="ourWorks/designers.html#dom"><img src="images/temproray/pic5.png"/></a></li>
+            <li><a href="ourWorks/designers.html#eryn"><img src="images/temproray/pic6.png"/></a></li>
+            <li><a href="ourWorks/designers.html#fuming"><img src="images/temproray/pic7.png"/></a></li>
+            <li><a href="ourWorks/designers.html#hancai"><img src="images/temproray/pic8.png"/></a></li>
+            <li><a href="ourWorks/designers.html#haojie"><img src="images/temproray/pic9.png"/></a></li>
+            <li><a href="ourWorks/designers.html#jason"><img src="images/temproray/pic10.png"/></a></li>
+            <li><a href="ourWorks/designers.html#kaiwen"><img src="images/temproray/pic11.png"/></a></li>
+            <li><a href="ourWorks/designers.html#keyu"><img src="images/temproray/pic12.png"/></a></li>
+            <li><a href="ourWorks/designers.html#meg"><img src="images/temproray/pic13.png"/></a></li>
+            <li><a href="ourWorks/designers.html#mengwen"><img src="images/temproray/pic14.png"/></a></li>
+            <li><a href="ourWorks/designers.html#chancie"><img src="images/temproray/pic15.png"/></a></li>
+            <li><a href="ourWorks/designers.html#rebecca"><img src="images/temproray/pic16.png"/></a></li>
+            <li><a href="ourWorks/designers.html#sarah"><img src="images/temproray/pic17.png"/></a></li>
+            <li><a href="ourWorks/designers.html#ted"><img src="images/temproray/pic18.png"/></a></li>
+            <li><a href="ourWorks/designers.html#tiaoli"><img src="images/temproray/pic19.png"/></a></li>
+            <li><a href="ourWorks/designers.html#tin"><img src="images/temproray/pic20.png"/></a></li>
+            <li><a href="ourWorks/designers.html#tingyu"><img src="images/temproray/pic21.png"/></a></li>  
+            <li><a href="ourWorks/designers.html#troy"><img src="images/temproray/pic22.png"/></a></li>  
+            <li><a href="ourWorks/designers.html#wen"><img src="images/temproray/pic23.png"/></a></li>  
+            <li><a href="ourWorks/designers.html#xiaohan"><img src="images/temproray/pic24.png"/></a></li>  
+            <li><a href="ourWorks/designers.html#yashan"><img src="images/temproray/pic25.png"/></a></li>  
+  </ul>
+
+
+        </div>
+
+      </section>
+<!-- <script type=text/javascript src=statements.js></script> -->
+<script src="sketch.js"></script>
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+</body></html>
