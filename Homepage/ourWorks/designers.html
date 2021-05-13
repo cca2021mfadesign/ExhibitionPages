@@ -4,16 +4,314 @@
 <head>
   <title>Getting Lost</title>
   <meta content="text/html;charset=utf-8" http-equiv="Content-Type">
-<meta content="utf-8" http-equiv="encoding">
-
+  <meta content="utf-8" http-equiv="encoding">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" type="text/css" href="isometricLayout.css">
+<!--   <link rel="stylesheet" type="text/css" href="../style.css"> -->
 <!--   <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
   <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.5.9/slick.min.css">
   <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.5.9/slick-theme.min.css"> -->
 
 </head>
+<style type="text/css">
+  /********dropDown***/
+  @font-face {
+  font-family: myTinyFont;
+  src: url(../TINY5x3-140.otf);
+}
+  .centerButton{
+  height: 150px;
+  width: 150px;
+  position: absolute;
+  top:2vh;
+   right:2vw;
+   border-radius: 50%;
+  transform: rotate(0deg);
+  border-color:#000;
+    box-shadow: 12px 12px 2px 1px rgba(100, 100, 100, .1);
+}
+.centerButton1{
+  height: 150px;
+  width: 150px;
+  position: absolute;
+  top:2vh;
+  right:calc(2vh + 200px);
+  border-radius: 50%;
+  transform: rotate(0deg);
+      box-shadow: 12px 12px 2px 1px rgba(100, 100, 100, .1);
+}
+.rot{
+  transform: rotateZ(90deg);
+}
 
+ .centerButton:hover,.centerButton1:hover{
+  box-shadow: 12px 12px 2px 1px rgba(100, 100, 100, .5);
+ border: 2px #000;
+
+}
+/*.centerButton1:hover{
+  transform: rotateZ(-90deg);
+}*/
+   .popup-flex{
+  margin:30px;
+}
+.popup-container {
+    visibility: hidden;
+    opacity: 0;
+    transition: all 0.3s ease-in-out;
+    transform: scale(1.3);
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(21, 17, 17, 0.61);
+    display: flex;
+    align-items: center;
+}
+.popup-content {
+    background-color: #ffff00;
+    margin: auto;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 50%;
+ transform: rotate(0deg);
+}
+.popup-content h1{
+  font-family: myTinyFont;
+  font-size: 40px;
+   transform: rotate(0deg);
+}
+.popup-content p{
+    font-family: 'Signika', sans-serif;
+    font-size: 17px;
+    padding: 10px;
+    line-height: 35px;
+}
+.popup-content span{
+    color: #aaaaaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.popup-content span:hover,
+.popup-content span:focus {
+    color: #000;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.show{
+  visibility: visible;
+  opacity: 1;
+  transform: scale(1);
+}
+
+
+
+
+/****drop down ****/
+.dropbtn {
+  background-color: #3498DB;
+  color: white;
+  padding: 16px;
+  font-size: 16px;
+  border: none;
+  cursor: pointer;
+}
+
+.dropbtn:hover, .dropbtn:focus {
+  background-color: #2980B9;
+}
+
+.dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #f1f1f1;
+  min-width: 160px;
+  overflow-y: auto;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+
+}
+
+.dropdown-content a {
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+  font-family: 'Signika', sans-serif;
+  overflow-y: scroll;
+  font-size: 14px;
+
+}
+
+.dropdown-content a:hover {background-color: #333; color:#ffff00;}
+
+.show {display: block;}
+
+@media (max-width:600px){
+ 
+ canvas{
+  opacity: 0;
+ }
+ .centerButton1{
+  height: 50px;
+  width: 50px;
+  position: absolute;
+  top:2vh;
+  right:calc(2vh + 100px);
+  border-radius: 50%;
+  transform: rotate(0deg);
+}
+
+  .ulclass {
+  list-style: none;
+  padding: 0;
+  margin: auto;
+  align-items: center;
+  align-content: center;
+  justify-content: center;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+  .canvasSection{
+  width: 90vw;
+  height: 70%;
+  display: inline-block;
+  background-color: transparent;
+  margin:10vw;
+  top: 5vh;
+  position: absolute;
+  }
+  body{
+    background-color: #000;
+  }
+  .centerButton{
+  height: 50px;
+  width: 50px;
+  position: absolute;
+  top:2vh;
+   right:2vw;
+   border-radius: 50%;
+
+ }
+ .centerButton:.hover,.centerButton1:hover{
+  box-shadow: 12px 12px 2px 1px rgba(100, 100, 100, .5);
+ border: 2px #fff;
+
+}
+a {
+  font-family: myTinyFont;
+  font-size: 15px;
+}
+   
+
+.main{
+  width: 95%;
+  height: auto;
+  display: inline-block;
+  margin-left: 2.5%;
+   margin-right: 2.5%;
+ padding-top: 40%;
+
+}
+}
+</style>
 <body>
+  <!---icon----->
+<img id="popup-btn" class="centerButton" src="../images/favicon.png">
+<img id="popup-btn1" onclick="myFunction()"class="centerButton1" src="../images/down_arrow.png">
+<div id="myDropdown" class="dropdown-content">
+<a href="../homepage.html">Home</a>
+<a href="#abigayle">Abigayle Cosinuke</a>
+<a href="#ashlyn">Ashlyn Jackson</a>
+<a href="#chloe">Chloe Looker</a>
+<a href="#narae">Danielle Kim</a>
+<a href="#dom">Dom Granato</a>
+<a href="#eryn">Eryn Bathke</a>
+<a href="#fuming">Fuming Zhao</a>
+<a href="#hancai">Hancai Wang</a>
+<a href="#haojie">Haojie Chai</a>
+<a href="#jason">Jason Malik</a>
+<a href="#kaiwen">Kaiwen Liu</a>
+<a href="#keyu">Keyu Mao</a>
+<a href="#meg">Meg Quarton</a>
+<a href="#mengwen">Mengwen Yu</a>
+<a href="#chancie">Qianshi Zheng</a>
+<a href="#rebecca">Rebecca Gardea</a>
+<a href="#sarah">Sarah Chieko Bonnickson</a>
+<a href="#ted">Ted Chen</a>
+<a href="#tiaoli">Tiaoli li</a>
+<a href="#tin">Tin Dinh</a>
+<a href="#tingyu">Tingyu Zhao</a>
+<a href="#troy">Troy Taylor</a>
+<a href="#wen">Wen Liu</a>
+<a href="#xiaohan">Xiaohan Hannah Liao</a>
+<a href="#yashan">Yashan Deng</a>
+  </div>
+<script>
+/* When the user clicks on the button, 
+toggle between hiding and showing the dropdown content */
+function myFunction() {
+  document.getElementById("myDropdown").classList.toggle("show");
+  document.getElementById("popup-btn1").classList.toggle("rot");
+}
+
+// Close the dropdown if the user clicks outside of it
+window.onclick = function(event) {
+  if (!event.target.matches('.dropbtn')) {
+    var dropdowns = document.getElementsByClassName("dropdown-content");
+    var downArrows = document.getElementsByClassName("centerButton1");
+    var i;
+    for (i = 0; i < dropdowns.length; i++) {
+      var openDropdown = dropdowns[i];
+      if (openDropdown.classList.contains('show')) {
+        openDropdown.classList.remove('show');
+
+      }
+    }
+
+    for(let i=0; i<downArrows.length;i++){
+      var downArrow = downArrows[i];
+      if(downArrow.classList.contains('rot')){
+        downArrow.classList.remove('rot');
+      }
+    }
+  }
+}
+</script>
+     <div id="popup-wrapper" class="popup-container">
+  <div class="popup-content">
+    <span id="close">&times;</span>
+    <center><h1 class="titleClass">CURATORIAL STATEMENT</h1></center>
+    <p>This has been a year of loss, both personal and universal. But for the Thesis class of 2021, it’s also been a time of getting lost: in the process, in our minds, in our work.  In her book A Field Guide to Getting Lost, Rebecca Solnit says, “Lost really has two disparate meanings. Losing things is about the familiar falling away, getting lost is about the unfamiliar appearing.” In an unfamiliar world, we’ve been restricted to a year of virtual classes and critiques. But rather than letting this technological mediation interfere in our work, we’ve managed to wander through uncharted territory, arriving at singular moments of beauty, innovation, and potential. Connecting the dots across cyberspace, we arrive here, together. Where are we? What the hell (is going on)? celebrates the work created as we’ve navigated through an unfamiliar year of wide unknowns.  We welcome you to come into our process, and get lost with us. This is not a final destination, just an anchor on our voyage. We are still sailing in different directions, sailing into the unknown.</p>
+  </div>
+</div>
+<script type="text/javascript">
+  var popup = document.getElementById('popup-wrapper');
+var btn = document.getElementById("popup-btn");
+var span = document.getElementById("close");
+btn.onclick = function() {
+    popup.classList.add('show');
+}
+span.onclick = function() {
+    popup.classList.remove('show');
+}
+
+window.onclick = function(event) {
+    if (event.target == popup) {
+        popup.classList.remove('show');
+    }
+}
+</script>
 
   <!----left---->
 <section id="abigale">
