@@ -7,7 +7,7 @@
 
         <link rel="shortcut icon" href="images/favicon.png"> 
       <link rel="stylesheet" type="text/css" href="css/backgroundstyle.css" />
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.3.1/p5.min.js"></script>
+
     <link rel="stylesheet" type="text/css" href="style.min.css">
 	<body>
 
@@ -53,16 +53,16 @@
   </div>
 </div>
 
-<section id="background-container"  class="canvasSection">
+<section data-aos="fade-down" id="background-container"  class="canvasSection">
 
 </section>
 
 
-<section id="images-grid" class="main">
+<section data-aos="fade-down" id="images-grid" class="main">
 
-<div class="galeria">
-  <ul class='ulclass'>
-            <li><a href="ourWorks/designers.html#abigayle"><img src="images/temproray/pic1.png"/></a></li>
+<div data-aos="fade-up"  class="galeria">
+  <ul class='ulclass'  data-aos="fade-left" >
+            <li><a href="ourWorks/designers.html#abigayle"><img  data-aos="fade-left" src="images/temproray/pic1.png"/></a></li>
             <li><a href="ourWorks/designers.html#ashlyn"><img src="images/temproray/pic2.png"/></a></li>
             <li><a href="ourWorks/designers.html#chloe"><img src="images/temproray/pic3.png"/></a></li>
             <li><a href="ourWorks/designers.html#narae"><img src="images/temproray/pic4.png"/></a></li>
@@ -94,8 +94,15 @@
 
       </section>
 <!-- <script type=text/javascript src=statements.js></script> -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.3.1/p5.min.js"></script>
+<script src="https://cdn.rawgit.com/michalsnik/aos/2.0.4/dist/aos.js"></script>
 <script type="text/javascript" src="dropdownmenu.min.js"></script>
 <script src="sketch.min.js"></script>
+<script type="text/javascript">
+    AOS.init({
+  duration: 1000
+});
 
+</script>
 
 </body></html>
