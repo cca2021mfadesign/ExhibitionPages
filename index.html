@@ -61,6 +61,84 @@ svg{
   z-index: -1;
 }
 
+* {
+  margin: 0;
+  padding: 0;
+}
+
+*,
+*:before,
+*:after {
+  box-sizing: border-box;
+}
+
+ul,
+ol {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+  padding: 20px;
+}
+
+body {
+  font-family: "Nunito", sans-serif;
+  font-size: 14px;
+  line-height: 1.5;
+}
+
+.neonShadow{
+  height:50px;
+  width:100px;
+  border:none;
+  border-radius:50px;
+  transition:0.3s;
+  background-color:transparent;
+  color:#ffff00;
+  animation: glow 1s infinite ;
+  transition:0.5s;
+ padding:10px;
+}
+span{
+    display: block;
+    width: 100%;
+    height: 100%;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: 700;
+    padding-top: 15%;
+    padding-right: 2.5%;
+    margin-right: 0px;
+    font-size: 1.2rem;
+    transition: 0.3s;
+    opacity: 0;
+    }
+span:hover{
+    transition: 0.3s;
+    opacity: 1;
+    font-weight: 700;
+    }
+
+.neonShadow:hover{
+  transform:translateX(-20px)rotate(30deg);
+  border-radius:5px;
+  background-color:transparent;
+  transition:0.5s;
+}
+
+@keyframes glow{
+  0%{
+  box-shadow: 3px 3px 20px rgb(93, 52, 168),-3px -3px 20px rgb(93, 52, 168);}
+  
+  50%{
+  box-shadow: 3px 3px 20px rgb(255, 255, 0),-3px -3px 20px rgb(255, 255, 0)
+  }
+  100%{
+  box-shadow: 3px 3px 20px rgb(93, 52, 168),-3px -3px 20px rgb(93, 52, 168)
+  }
+}
+
+
 
   </style>
 
@@ -76,7 +154,12 @@ svg{
       This has been a year of loss, both personal and universal. But for the Thesis class of 2021, it’s also been a time of getting lost: in the process, in our minds, in our work.  In her book A Field Guide to Getting Lost, Rebecca Solnit says, “Lost really has two disparate meanings. Losing things is about the familiar falling away, getting lost is about the unfamiliar appearing.” In an unfamiliar world, we’ve been restricted to a year of virtual classes and critiques. But rather than letting this technological mediation interfere in our work, we’ve managed to wander through uncharted territory, arriving at singular moments of beauty, innovation, and potential. Connecting the dots across cyberspace, we arrive here, together. Where are we? What the hell (is going on)? celebrates the work created as we’ve navigated through an unfamiliar year of wide unknowns.  We welcome you to come into our process, and get lost with us. This is not a final destination, just an anchor on our voyage. We are still sailing in different directions, sailing into the unknown.
     </p>
     <cite>CCA MFA Design 2021</cite>
-    <center><a href="Homepage/homepage.html">Enter >>>>></a></center>
+      <center><a class="neonShadow"href="Homepage/homepage.html">Enter The Exhibition</a></center>
+      <br>
+    <center><a class="neonShadow"href="https://www.figma.com/file/rbxkDbkjOIEuXBei9gaJat/Exhibition?node-id=515%3A2">Play Hide and Seek</a></center>
+
+
+   
 </blockquote>
 </body>
 </html>
