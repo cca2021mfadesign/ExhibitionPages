@@ -26,8 +26,8 @@ class Particle {
     this.x = random(230, width - 130);
     this.y = random(230, height - 130);
     this.r = 15;
-    this.xSpeed = random(-0.25, 0.25);
-    this.ySpeed = random(-0.25, 0.25);
+    this.xSpeed = random(-0.5, 0.5);
+    this.ySpeed = random(-0.5, 0.5);
   }
 
   // creation of a particle.
