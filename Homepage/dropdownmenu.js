@@ -26,7 +26,7 @@ window.onclick = function(event) {
     }
   }
 }
-  var popup = document.getElementById('popup-wrapper');
+var popup = document.getElementById('popup-wrapper');
 var btn = document.getElementById("popup-btn");
 var span = document.getElementById("close");
 btn.onclick = function() {

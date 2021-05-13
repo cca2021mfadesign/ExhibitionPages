@@ -1,7 +1,7 @@
 
 
-  var moreText = document.querySelectorAll('.more');
-  var btnText = document.querySelectorAll('.myBtn');
+var moreText = document.querySelectorAll('.more');
+var btnText = document.querySelectorAll('.myBtn');
 var leftHolder=document.querySelectorAll('.leftHolder');
 var samplediv = document.querySelectorAll(".samplediv");
 var close = document.querySelectorAll('.close');
@@ -47,12 +47,6 @@ btnText[i].addEventListener('click', function(){
   });
 })(i);
     }
-
-
-
-  
- 
-
   var rdots = document.querySelectorAll('.rdots');
   var rmoreText = document.querySelectorAll('.rmore');
   var rbtnText = document.querySelectorAll('.rmyBtn');
