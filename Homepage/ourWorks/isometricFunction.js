@@ -44,8 +44,8 @@ for(var i =0; i<btnText.length; i++){
   close[i].style.opacity= 0;
   samplediv[i].style.fontSize ="15px";
   samplediv[i].style.zIndex= "0";
-  samplediv[i].style.overflow="none";
-  
+  samplediv[i].style.overflow="auto";
+
 });
  })(i);
 }
@@ -95,7 +95,7 @@ var rStatementsContents = document.querySelectorAll('.rStatementsContents');
   rsamplediv[i].style.fontSize ="15px";
   rclose[i].style.opacity= 0;
   rsamplediv[i].style.zIndex = "0";
-  rsamplediv[i].style.overflow="none";
+  rsamplediv[i].style.overflow="auto";
 
 });
 
