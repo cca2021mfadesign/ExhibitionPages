@@ -42,7 +42,7 @@ btnText[i].addEventListener('click', function(){
         samplediv[i].style.height = "100%";
     close[i].style.opacity= 0;
     samplediv[i].style.fontSize ="15px";
-         samplediv[i].style.zIndex= "1";
+         samplediv[i].style.zIndex= "0";
  
   });
 })(i);
@@ -97,7 +97,7 @@ for(var i =0; i<rbtnText.length; i++){
   rsamplediv[i].style.height = "100%";
       rsamplediv[i].style.fontSize ="15px";
      rclose[i].style.opacity= 0;
-      rsamplediv[i].style.zIndex = "1";
+      rsamplediv[i].style.zIndex = "0";
 
   });
 

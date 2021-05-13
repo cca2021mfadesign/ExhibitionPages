@@ -5,10 +5,10 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
          <title>Welcome To CCA MFA Design 2021 Exhibition</title>
 
-        <link rel="shortcut icon" href="images/waww.png"> 
+        <link rel="shortcut icon" href="images/favicon.png"> 
       <link rel="stylesheet" type="text/css" href="css/backgroundstyle.css" />
     <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.3.1/p5.min.js"></script>
-    <link rel="stylesheet" type="text/css" href="style.css">
+    <link rel="stylesheet" type="text/css" href="style.min.css">
 	<body>
 
 
@@ -41,32 +41,16 @@
 <a href="ourWorks/designers.html#wen">Wen Liu</a>
 <a href="ourWorks/designers.html#xiaohan">Xiaohan Hannah Liao</a>
 <a href="ourWorks/designers.html#yashan">Yashan Deng</a>
-  </div>
+</div>
 
-     <div id="popup-wrapper" class="popup-container">
+<div id="popup-wrapper" class="popup-container">
   <div class="popup-content">
     <span id="close">&times;</span>
     <center><h1 class="titleClass">CURATORIAL STATEMENT</h1></center>
     <p>This has been a year of loss, both personal and universal. But for the Thesis class of 2021, it’s also been a time of getting lost: in the process, in our minds, in our work.  In her book A Field Guide to Getting Lost, Rebecca Solnit says, “Lost really has two disparate meanings. Losing things is about the familiar falling away, getting lost is about the unfamiliar appearing.” In an unfamiliar world, we’ve been restricted to a year of virtual classes and critiques. But rather than letting this technological mediation interfere in our work, we’ve managed to wander through uncharted territory, arriving at singular moments of beauty, innovation, and potential. Connecting the dots across cyberspace, we arrive here, together. Where are we? What the hell (is going on)? celebrates the work created as we’ve navigated through an unfamiliar year of wide unknowns.  We welcome you to come into our process, and get lost with us. This is not a final destination, just an anchor on our voyage. We are still sailing in different directions, sailing into the unknown.</p>
   </div>
 </div>
-<script type="text/javascript">
-  var popup = document.getElementById('popup-wrapper');
-var btn = document.getElementById("popup-btn");
-var span = document.getElementById("close");
-btn.onclick = function() {
-    popup.classList.add('show');
-}
-span.onclick = function() {
-    popup.classList.remove('show');
-}
 
-window.onclick = function(event) {
-    if (event.target == popup) {
-        popup.classList.remove('show');
-    }
-}
-</script>
 <section id="background-container"  class="canvasSection">
 
 </section>
@@ -109,36 +93,7 @@ window.onclick = function(event) {
       </section>
 <!-- <script type=text/javascript src=statements.js></script> -->
 <script src="sketch.js"></script>
-<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
-<script>
-/* When the user clicks on the button, 
-toggle between hiding and showing the dropdown content */
-function myFunction() {
-  document.getElementById("myDropdown").classList.toggle("show");
-  document.getElementById("popup-btn1").classList.toggle("rot");
-}
 
-// Close the dropdown if the user clicks outside of it
-window.onclick = function(event) {
-  if (!event.target.matches('.dropbtn')) {
-    var dropdowns = document.getElementsByClassName("dropdown-content");
-    var downArrows = document.getElementsByClassName("centerButton1");
-    var i;
-    for (i = 0; i < dropdowns.length; i++) {
-      var openDropdown = dropdowns[i];
-      if (openDropdown.classList.contains('show')) {
-        openDropdown.classList.remove('show');
+<script type="text/javascript" src="dropdownmenu.min.js"></script>
 
-      }
-    }
-
-    for(let i=0; i<downArrows.length;i++){
-      var downArrow = downArrows[i];
-      if(downArrow.classList.contains('rot')){
-        downArrow.classList.remove('rot');
-      }
-    }
-  }
-}
-</script>
 </body></html>

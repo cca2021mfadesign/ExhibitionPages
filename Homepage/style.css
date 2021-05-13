@@ -49,8 +49,7 @@ a {
 }
 
  .centerButton:hover,.centerButton1:hover{
-  box-shadow: 12px 12px 2px 1px rgba(100, 100, 100, .5);
- border: 2px #000;
+  box-shadow: 12px 12px 2px 1px rgba(255, 255, 0, .5);
 
 }
 /*.centerButton1:hover{
